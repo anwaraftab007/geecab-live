@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geecab | Admin </title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+  </head>
+<style>
+  /* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5 ease;
+}
+
+.sidebar.active {
+  width: 240px;
+}
+
+.sidebar .logo_content .logo {
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+}
+
+.logo_content .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+.logo_content .logo .logo_name {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+
+.sidebar.active #btn {
+  left: 90%;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 50px;
+}
+
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 122px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.sidebar.active ul li .tooltip {
+  display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%;
+}
+
+.sidebar ul li input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.sidebar ul li .bx-search {
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.5 ease;
+}
+
+.sidebar ul li .bx-search:hover {
+  background: #fff;
+  color: #1d1b31;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+  color: #11101d;
+  background: #fff;
+}
+
+.sidebar ul li i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.sidebar .links_name {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .profile_content {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sidebar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .profile_content .profile {
+  background: #1d1b31;
+}
+
+.profile_content .profile .profile_details {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.sidebar.active .profile .profile_details {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.profile .profile_details .name_job {
+  margin-left: 10px;
+}
+
+.profile .profile_details .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile .profile_details .job {
+  font-size: 12px;
+}
+
+.profile #log_out {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+
+.sidebar.active .profile #log_out {
+  left: 88%;
+}
+
+.sidebar.active .profile #log_out {
+  background: none;
+}
+
+.home_content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all 0.5s ease;
+}
+
+.home_content .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  margin: 12px;
+}
+
+.sidebar.active ~ .home_content {
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+</style>
+<script>
+    const authToken = localStorage.getItem("authToken");
+
+    if (authToken) {
+        document.getElementById("status").innerText = "Welcome! You are authorized.";
+        document.getElementById("protectedContent").style.display = "block";
+    } else {
+        document.getElementById("status").innerText = "You are not authorized to access this page.";
+        setTimeout(() => {
+            window.location.href = "/login.html"; // Redirect to login page
+        }, 2000);
+    }
+</script>
+  <body>
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          
+          <div class="logo_name">
+            Geecab
+          </div>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="/admin010.html">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="/updateBlog.html">
+            <i class="bx bx-edit"></i>
+            <span class="links_name">Edit Blog</span>
+          </a>
+          <span class="tooltip">Edit Blog</span>
+        </li>
+        <li>
+          <a href="/updateBlog.html">
+            <i class="bx bx-trash"></i>
+            <span class="links_name">Delete Blog</span>
+          </a>
+          <span class="tooltip">Delete Blog</span>
+        </li><li>
+          <a href="/chat.html">
+            <i class="bx bx-chat"></i>
+            <span class="links_name">Enquiry Blog</span>
+          </a>
+           <span class="tooltip">Enquiry Blog</span>
+        </li>
+      </ul>
+      <div class="profile_content">
+        <div class="profile">
+          
+          <i class="bx bx-log-out" id="log_out"></i>
+        </div>
+      </div>
+    </div>
+    <div class="home_content" style="overflow-y: auto !important;">
+        
+      <div class="loader w-full h-screen flex justify-center items-center text-center" id="loader">
+        <h2 class="text">Loading..</h2>
+      </div>
+<section class="contact-page" style="display: none;">
+    <div class="flex items-center justify-between border-b rounded-t">
+        <h1 class="text text-center w-full">Customer Enquiry</h1>
+    </div>
+    
+    <div class="md:p-6 space-y-6 flex justify-center" style="overflow-x:hidden !important;">
+        <div class="container mx-auto p-6">          
+<div id="contact-list" class="container mx-auto mt-4">
+    <!-- Contacts will be appended here -->
+  </div>
+
+
+    </div>
+
+    
+    
+    
+    
+</section>
+
+    </div>
+    <script>
+      const loader = document.getElementById("loader");
+        const div = document.querySelector(".contact-page");
+        fetch("https://geecab-server.onrender.com/api/is-logged-in", {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Unauthorized");
+                }
+            })
+            .then((data) => {
+                // Redirect to the create blog page or show the form
+                loader.style.display = "none";
+                div.style.display = "block";
+            })
+            .catch((error) => {
+                console.error(error);
+                // Redirect to login if not authenticated
+                window.location.href = "/login.html";
+            });
+        
+        
+            document.getElementById("log_out").addEventListener("click", function () {
+                // Clear the auth token from localStorage
+                localStorage.removeItem("authToken");
+                
+                // Optional: If you also store it in sessionStorage
+                sessionStorage.removeItem("authToken");
+        
+                // Redirect the user to the login page
+                window.location.href = "/login.html";
+            });
+        
+                    
+                    </script>
+
+    <script>
+
+let btn = document.querySelector('#btn');
+let sidebar = document.querySelector('.sidebar');
+let searchBtn = document.querySelector('.bx-search');
+
+btn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+searchBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+    </script>
+  </body>
+</html>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script defer>
+    const apiBaseUrl = "https://geecab-server.onrender.com/api/contact";
+const token = localStorage.getItem("authToken"); // Get token from localStorage
+
+if (!token) {
+  alert("You are not authorized. Redirecting to login page...");
+  window.location.href = "/login.html";
+}
+
+const fetchContacts = async () => {
+  try {
+    const response = await fetch(apiBaseUrl, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch contacts.");
+    }
+
+    const contacts = await response.json();
+    renderContacts(contacts);
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Failed to fetch contacts.");
+  }
+};
+
+const deleteContact = async (contactId) => {
+  const confirmDelete = confirm("Are you sure you want to delete this contact?");
+  if (!confirmDelete) return;
+
+  try {
+    const response = await fetch(`${apiBaseUrl}/${contactId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete contact.");
+    }
+
+    alert("Contact deleted successfully.");
+    fetchContacts(); // Refresh contact list
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Failed to delete contact.");
+  }
+};
+
+const renderContacts = (contacts) => {
+  const contactList = document.getElementById("contact-list");
+  contactList.innerHTML = ""; // Clear previous contacts
+
+  contacts.forEach((contact) => {
+    const contactItem = document.createElement("div");
+    contactItem.className = "contact-card border p-4 rounded shadow-lg mb-4";
+
+    contactItem.innerHTML = `
+      <h3 class="text-xl font-semibold text-gray-800">${contact.name}</h3>
+      <p class="text-gray-600"><strong>Email:</strong> ${contact.email}</p>
+      <p class="text-gray-600"><strong>Phone:</strong> ${contact.phone}</p>
+      <p class="text-gray-600"><strong>State:</strong> ${contact.state || "N/A"}</p>
+      <p class="text-gray-600"><strong>City:</strong> ${contact.city || "N/A"}</p>
+      <p class="text-gray-600"><strong>Interested In:</strong> ${contact.productsInterested || "N/A"}</p>
+      <p class="text-gray-600"><strong>Message:</strong> ${contact.message || "N/A"}</p>
+      <p class="text-sm text-gray-500"><strong>Created on:</strong> ${new Date(contact.createdAt).toLocaleDateString()}</p>
+      <button class="text-red-500 hover:text-red-700 mt-2" data-contact-id="${contact._id}">
+        🗑️ Delete
+      </button>
+    `;
+
+    const deleteButton = contactItem.querySelector("button");
+    deleteButton.addEventListener("click", () => deleteContact(contact._id));
+
+    contactList.appendChild(contactItem);
+  });
+};
+
+// Fetch and render contacts on page load
+fetchContacts();
+
+  </script>

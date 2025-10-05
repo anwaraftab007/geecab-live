@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geecab | Admin </title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+  </head>
+<style>
+  /* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5 ease;
+}
+
+.sidebar.active {
+  width: 240px;
+}
+
+.sidebar .logo_content .logo {
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+}
+
+.logo_content .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+.logo_content .logo .logo_name {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+
+.sidebar.active #btn {
+  left: 90%;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 50px;
+}
+
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 122px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.sidebar.active ul li .tooltip {
+  display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%;
+}
+
+.sidebar ul li input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.sidebar ul li .bx-search {
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.5 ease;
+}
+
+.sidebar ul li .bx-search:hover {
+  background: #fff;
+  color: #1d1b31;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+  color: #11101d;
+  background: #fff;
+}
+
+.sidebar ul li i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.sidebar .links_name {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .profile_content {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sidebar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .profile_content .profile {
+  background: #1d1b31;
+}
+
+.profile_content .profile .profile_details {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.sidebar.active .profile .profile_details {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.profile .profile_details .name_job {
+  margin-left: 10px;
+}
+
+.profile .profile_details .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile .profile_details .job {
+  font-size: 12px;
+}
+
+.profile #log_out {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+
+.sidebar.active .profile #log_out {
+  left: 88%;
+}
+
+.sidebar.active .profile #log_out {
+  background: none;
+}
+
+.home_content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all 0.5s ease;
+}
+
+.home_content .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  margin: 12px;
+}
+
+.sidebar.active ~ .home_content {
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+</style>
+<script>
+    const authToken = localStorage.getItem("authToken");
+
+    if (authToken) {
+        document.getElementById("status").innerText = "Welcome! You are authorized.";
+        document.getElementById("protectedContent").style.display = "block";
+    } else {
+        document.getElementById("status").innerText = "You are not authorized to access this page.";
+        setTimeout(() => {
+            window.location.href = "/login.html"; // Redirect to login page
+        }, 2000);
+    }
+</script>
+  <body>
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          
+          <div class="logo_name">
+            Geecab
+          </div>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="/admin010.html">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="/updateBlog.html">
+            <i class="bx bx-edit"></i>
+            <span class="links_name">Edit Blog</span>
+          </a>
+          <span class="tooltip">Edit Blog</span>
+        </li>
+        <li>
+          <a href="/updateBlog.html">
+            <i class="bx bx-trash"></i>
+            <span class="links_name">Delete Blog</span>
+          </a>
+          <span class="tooltip">Delete Blog</span>
+        </li><li>
+          <a href="/chat.html">
+            <i class="bx bx-chat"></i>
+            <span class="links_name">Enquiry Blog</span>
+          </a>
+           <span class="tooltip">Enquiry Blog</span>
+        </li>
+      </ul>
+      <div class="profile_content">
+        <div class="profile">
+          
+          <i class="bx bx-log-out" id="log_out"></i>
+        </div>
+      </div>
+    </div>
+      
+    </div>
+    <div class="home_content">
+      <div class="loader w-full h-screen flex justify-center items-center text-center" id="loader">
+        <h2 class="text">Loading..</h2>
+      </div>
+        <section class="contact-page min-h-screen flex items-center justify-center" style="display: none;overflow-y: auto !important;">
+            <div class="flex flex-col items-center w-full">
+                <div class="flex items-center justify-center border-b rounded-t">
+                    <h2 class="text text-center w-full">Update a Blog</h2>
+                </div>
+                <div class="p-6 space-y-6 flex justify-center">
+                  <div class="container mx-auto p-6">
+                      <form id="updateBlogForm" method="POST"
+                          class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl px-4 md:px-8">
+                          <div class="space-y-6">
+                              <div>
+                                  <label for="title" class="text-sm font-medium text-gray-900 block mb-2">Title*</label>
+                                  <input type="text" id="title" name="title"
+                                      class="h-full shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5"
+                                      placeholder="Blog Title" required>
+                              </div>
+              
+                              <div class="w-full">
+                                  <label for="thumbnail-file" class="block text-sm font-medium text-gray-700 mb-2">Thumbnail Image<b>*</b></label>
+                                  <div class="mt-1 w-full flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                      <div class="space-y-1 text-center">
+                                          <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v12a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 005.656 0L28 36m32-4Vtwelvea4 4 0 00-4-4h-32a4 4 0 00-4 4v20c0 2.206.895 4.206 2.344 5.656L28 48l15.656-15.656A4 4 0 0040 36z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                          </svg>
+                                          <div class="flex text-sm text-gray-600">
+                                              <label for="thumbnail-file" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                  <span>Upload a file</span>
+                                                  <input id="thumbnail-file" name="thumbnail" type="file" class="sr-only">
+                                              </label>
+                                              <p class="pl-1">or drag and drop</p>
+                                          </div>
+                                          <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                      </div>
+                                  </div>
+                                  <img src="" alt="Thumbnail" class="blog-image-thumbnail mt-2 max-h-48" style="display: none;">
+                              </div>
+              
+                              <div class="w-full">
+                                  <label for="middle-file" class="block text-sm font-medium text-gray-700 mb-2">Middle Image (Optional)</label>
+                                  <div class="mt-1 w-full flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                      <div class="space-y-1 text-center">
+                                          <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v12a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 005.656 0L28 36m32-4Vtwelvea4 4 0 00-4-4h-32a4 4 0 00-4 4v20c0 2.206.895 4.206 2.344 5.656L28 48l15.656-15.656A4 4 0 0040 36z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                          </svg>
+                                          <div class="flex text-sm text-gray-600">
+                                              <label for="middle-file" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                  <span>Upload a file</span>
+                                                  <input id="middle-file" name="middle" type="file" class="sr-only">
+                                              </label>
+                                              <p class="pl-1">or drag and drop</p>
+                                          </div>
+                                          <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                      </div>
+                                  </div>
+                                  <img src="" alt="Middle Image" class="blog-image-middle mt-2 max-h-48" style="display: none;">
+                              </div>
+              
+                              <div class="w-full">
+                                  <label for="lower-file" class="block text-sm font-medium text-gray-700 mb-2">Lower Image (Optional)</label>
+                                  <div class="mt-1 w-full flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                      <div class="space-y-1 text-center">
+                                          <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v12a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 005.656 0L28 36m32-4Vtwelvea4 4 0 00-4-4h-32a4 4 0 00-4 4v20c0 2.206.895 4.206 2.344 5.656L28 48l15.656-15.656A4 4 0 0040 36z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                          </svg>
+                                          <div class="flex text-sm text-gray-600">
+                                              <label for="lower-file" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                  <span>Upload a file</span>
+                                                  <input id="lower-file" name="lower" type="file" class="sr-only">
+                                              </label>
+                                              <p class="pl-1">or drag and drop</p>
+                                          </div>
+                                          <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                      </div>
+                                  </div>
+                                  <img src="" alt="Lower Image" class="blog-image-lower mt-2 max-h-48" style="display: none;">
+                              </div>
+                          </div>
+              
+                          <div class="space-y-6">
+                              <div>
+                                  <label for="header-paragraph" class="block text-sm font-medium text-gray-700 mb-2">Header Paragraph*</label>
+                                  <textarea name="header-paragraph" id="header-paragraph"
+                                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5 h-32"
+                                      placeholder="Write the introductory paragraph for your blog..." required></textarea>
+                              </div>
+              
+                              <div>
+                                  <label for="middle-paragraph" class="block text-sm font-medium text-gray-700 mb-2">Middle Paragraph (Optional)</label>
+                                  <textarea name="middle-paragraph" id="middle-paragraph"
+                                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5 h-48"
+                                      placeholder="Write the main content of your blog here..."></textarea>
+                              </div>
+              
+                              <div>
+                                  <label for="lower-paragraph" class="block text-sm font-medium text-gray-700 mb-2">Lower Paragraph (Optional)</label>
+                                  <textarea name="lower-paragraph" id="lower-paragraph"
+                                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5 h-32"
+                                      placeholder="Write a concluding paragraph for your blog..."></textarea>
+                              </div>
+                          </div>
+              
+                          <div class="md:col-span-2 p-6 border-t border-gray-200 rounded-b text-center">
+                              <button type="submit"
+                                  class="text-white bg-blue-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5">Update
+                                  Blog</button>
+                          </div>
+                      </form>
+                      <p id="result" class="text-center mt-4 text-green-600 font-medium"></p>
+                  </div>
+              </div>
+              
+             
+            </div>
+        </section>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              const form = document.getElementById("updateBlogForm");
+              const titleInput = document.getElementById("title");
+              const headerParagraphInput = document.getElementById("header-paragraph");
+              const middleParagraphInput = document.getElementById("middle-paragraph");
+              const lowerParagraphInput = document.getElementById("lower-paragraph");
+              const thumbnailInput = document.getElementById("thumbnail-file");
+              const middleImageInput = document.getElementById("middle-file");
+              const lowerImageInput = document.getElementById("lower-file");
+              const resultParagraph = document.getElementById("result");
+              const thumbnailPreview = document.querySelector(".blog-image-thumbnail");
+              const middleImagePreview = document.querySelector(".blog-image-middle");
+              const lowerImagePreview = document.querySelector(".blog-image-lower");
+              const loader = document.getElementById("loader");
+      
+              const urlParams = new URLSearchParams(window.location.search);
+              const slug = urlParams.get('slug');
+              const apiBaseUrl = "http://localhost:3001/api/blog"; // Adjust your API URL
+      
+              // Function to show the loader
+              function showLoader() {
+                  loader.style.display = "flex";
+              }
+      
+              // Function to hide the loader
+              function hideLoader() {
+                  loader.style.display = "none";
+              }
+      
+              // Function to fetch blog data for editing
+              async function fetchBlogData(slug) {
+                  showLoader();
+                  try {
+                      const response = await fetch(`${apiBaseUrl}/${slug}`);
+                      if (!response.ok) {
+                          const message = `An error occurred: ${response.status}`;
+                          throw new Error(message);
+                      }
+                      const blog = await response.json();
+                      populateForm(blog);
+                  } catch (error) {
+                      console.error("Error fetching blog data:", error);
+                      resultParagraph.textContent = "Error loading blog data for editing.";
+                  } finally {
+                      hideLoader();
+                  }
+              }
+      
+              // Function to populate the form with blog data
+              function populateForm(blog) {
+                  titleInput.value = blog.title;
+                  headerParagraphInput.value = blog.header;
+                  middleParagraphInput.value = blog.middle || '';
+                  lowerParagraphInput.value = blog.lower || '';
+      
+                  if (blog.thumbnail) {
+                      thumbnailPreview.src = blog.thumbnail;
+                      thumbnailPreview.style.display = 'block';
+                  }
+      
+                  if (blog.middleImage) {
+                      middleImagePreview.src = blog.middleImage;
+                      middleImagePreview.style.display = 'block';
+                  }
+      
+                  if (blog.lowerImage) {
+                      lowerImagePreview.src = blog.lowerImage;
+                      lowerImagePreview.style.display = 'block';
+                  }
+              }
+      
+              // Fetch blog data when the page loads
+              if (slug) {
+                  fetchBlogData(slug);
+              } else {
+                  resultParagraph.textContent = "No blog selected for editing.";
+              }
+      
+              form.addEventListener("submit", async (e) => {
+                  e.preventDefault();
+                  resultParagraph.textContent = "Updating Blog...";
+                  showLoader();
+      
+                  const formData = new FormData();
+                  formData.append("title", titleInput.value);
+                  formData.append("header", headerParagraphInput.value);
+                  formData.append("middle", middleParagraphInput.value);
+                  formData.append("lower", lowerParagraphInput.value);
+                  formData.append("slug", slug);
+                  formData.append("date", new Date().toISOString());
+      
+                  if (thumbnailInput.files.length > 0) {
+                      formData.append("thumbnail", thumbnailInput.files[0]);
+                  }
+                  if (middleImageInput.files.length > 0) {
+                      formData.append("middleImage", middleImageInput.files[0]);
+                  }
+                  if (lowerImageInput.files.length > 0) {
+                      formData.append("lowerImage", lowerImageInput.files[0]);
+                  }
+      
+                  try {
+                      const response = await fetch(`${apiBaseUrl}/${slug}`, {
+                          method: "PUT",
+                          headers: {
+                              'Authorization': `Bearer ${localStorage.getItem("authToken")}`,
+                          },
+                          body: formData,
+                      });
+      
+                      if (response.ok) {
+                          const data = await response.json();
+                          resultParagraph.textContent = data.message || "Blog updated successfully!";
+                          setTimeout(() => {
+                              window.location.href = "/updateBlog.html"; // Redirect to the blog list page
+                          }, 1500);
+                      } else {
+                          const errorData = await response.json();
+                          resultParagraph.textContent = errorData.message || "Error updating blog.";
+                      }
+                  } catch (error) {
+                      console.error("Error updating blog:", error);
+                      resultParagraph.textContent = "Failed to update blog. Please try again.";
+                  } finally {
+                      hideLoader();
+                  }
+              });
+          });
+      </script>
+    </div>
+    <script>
+        const div = document.querySelector(".contact-page");
+        fetch("https://geecab-server.onrender.com/api/is-logged-in", {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Unauthorized");
+                }
+            })
+            .then((data) => {
+                // Redirect to the create blog page or show the form
+                div.style.display = "block";
+            })
+            .catch((error) => {
+                console.error(error);
+                // Redirect to login if not authenticated
+                window.location.href = "/login.html";
+            });
+        
+        
+            document.getElementById("log_out").addEventListener("click", function () {
+                // Clear the auth token from localStorage
+                localStorage.removeItem("authToken");
+                
+                // Optional: If you also store it in sessionStorage
+                sessionStorage.removeItem("authToken");
+        
+                // Redirect the user to the login page
+                window.location.href = "/login.html";
+            });
+        
+                    
+                    </script>
+
+    <script>
+
+let btn = document.querySelector('#btn');
+let sidebar = document.querySelector('.sidebar');
+let searchBtn = document.querySelector('.bx-search');
+
+btn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+searchBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+    </script>
+  </body>
+</html>
+
+
+  
+
+
+
+
