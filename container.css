@@ -86,3 +86,13 @@
 .embla{
   display: none;
 }
+
+.blog-one__single-content{
+  max-width: 90%;
+  
+}
+@media (max-width: 768px) {
+  .blog-one__single-content{
+    margin: auto;
+  }
+}
