@@ -195,3 +195,14 @@ ul.shadow-box .dropdown-submenu > a {
 /* .dropdown-submenu > .shadow-box > li > a:hover {
     background-color: #f1f1f1 !important;
 } */
+
+
+
+.page-wrapper {
+  overflow: visible !important;
+  /* overflow: hidden; */
+}
+.sidebar{
+  position: sticky;
+  top: 100px;
+}
