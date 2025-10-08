@@ -1073,12 +1073,34 @@ largeState.addEventListener('mouseleave', () => {
     padding-bottom: 11px;
     padding-left: 18px;
     margin-top: 23px;
+    margin-bottom: 15px;
 }
 .sidebar__single .title-box1 h2 {
     font-size: 30px;
     line-height: 40px;
     font-weight: 700;
     text-transform: capitalize;
+}
+
+
+.sidebar__single .title-box1::before {
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    right: 0px;
+    background: #d0cfca;
+    height: 1px;
+    content: "";
+}
+
+.sidebar__single .title-box1::after {
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    width: 40px;
+    background: var(--billdins-base);
+    height: 1px;
+    content: "";
 }
                                       body {
                                         margin: 0;
