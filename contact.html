@@ -1008,76 +1008,146 @@ largeState.addEventListener('mouseleave', () => {
                     <div class="col-xl-6">
                         <div class="contact-page__form">
                             
-    <div class="flex items-center justify-betweenborder-b rounded-t">
+    
+
+    <div class="ms-md-4
+    "><div class="flex items-center justify-betweenborder-b rounded-t mb-8">
         <h2 class="text-3xl font-bold">
             Get In Touch
         </h2>
     </div>
-
-    <div class="p-6 space-y-6">
-        <form action="#" id="contactForm" method="POST">
-            <div class="grid grid-cols-6 gap-6">
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="name" class="text-sm font-medium text-gray-900 block mb-2">Name*</label>
-                    <input type="text" name="name" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5" placeholder="John Doe" required>
+        <form id="contactForm" class="contact-form pl-0 space-y-6">
+            
+            <div class="row g-4 mx-auto">
+              <!-- Name -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name" class="form-label font-semibold" style="font-size: 18px;">Name*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control form-control-lg"
+                    placeholder="Your Name"
+                    required
+                  />
                 </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="email" class="text-sm font-medium text-gray-900 block mb-2">Email*</label>
-                    <input type="email" name="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5" placeholder="youremail@example.com" required>
+              </div>
+          
+              <!-- Email -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email" class="form-label font-semibold" style="font-size: 18px;">Email*</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control form-control-lg"
+                    placeholder="youremail@example.com"
+                    required
+                  />
                 </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="phone" class="text-sm font-medium text-gray-900 block mb-2">Phone*</label>
-                    <input type="tel" name="phone" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5" placeholder="123-456-7890" required>
+              </div>
+          
+              <!-- Phone -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="phone" class="form-label font-semibold" style="font-size: 18px;">Phone*</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control form-control-lg"
+                    placeholder="123-456-7890"
+                    required
+                  />
                 </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="state" class="text-sm font-medium text-gray-900 block mb-2">State*</label>
-                    <select name="state" id="state" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5" required>
-                        <option value="">Select State</option>
-                        <option value="West Bengal">West Bengal</option>
-                        <option value="Bhutan">Bhutan</option>
-                        <option value="Odisha">Odisha</option>
-                        <option value="Bihar">Bihar</option>
-                        <option value="Jharkhand">Jharkhand</option>
-                        <option value="Sikkim">Sikkim</option>
-                        <option value="Assam">Assam</option>
-                        <option value="Tripura">Tripura</option>
-                        <option value="Manipur">Manipur</option>
-                        <option value="Nagaland">Nagaland</option>
-                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                        <option value="Mizoram">Mizoram</option>
-                        <option value="Meghalaya">Meghalaya</option>
-                    </select>
+              </div>
+          
+              <!-- Subject -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="subject" class="form-label font-semibold" style="font-size: 18px;">Subject*</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-control form-control-lg"
+                    placeholder="Enter Subject"
+                    required
+                  />
                 </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="city" class="text-sm font-medium text-gray-900 block mb-2">City*</label>
-                    <input type="text" name="city" id="city" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5" placeholder="Los Angeles" required>
+              </div>
+          
+              <!-- Message -->
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="message" class="form-label font-semibold" style="font-size: 18px;">Message*</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control form-control-lg"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    required
+                  ></textarea>
                 </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="products" class="text-sm font-medium text-gray-900 block mb-2">Product interested in*</label>
-                    <select name="products" id="products" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-[#FF5E14] focus:border-cyan-600 block w-full p-2.5" required>
-                        <option value="">Select Products</option>
-                        <option value="Wires and Cables">Wires and Cables</option>
-                        <option value="PVC Electrical Pipes and Casing">PVC Electrical Pipes and Casing</option>
-                        <option value="Extension Cords">Extension Cords</option>
-                        <option value="MCB Distribution Box">MCB Distribution Box</option>
-                        <option value="PVC Tapes">PVC Tapes</option>
-                        <option value="Electric Meters">Electric Meters</option>
-                        <option value="Gang Boxes">Gang Boxes</option>
-                        <option value="GWall Light">Wall Light</option>
-                    </select>
-                </div>
-            </div>
-            <div class="p-6 border-t border-gray-200 rounded-b">
+              </div>
+          
+              <!-- Submit Button -->
+              <div class="col-md-12 text-center mt-3 mt-md-4">
                 <button type="submit" class="thm-btn">
-                    Submit Now
-                    <i class="icon-next"></i>
-                    <span class="hover-btn hover-bx"></span>
-                    <span class="hover-btn hover-bx2"></span>
-                    <span class="hover-btn hover-bx3"></span>
-                    <span class="hover-btn hover-bx4"></span>
-                </button>  
+                  Submit Now
+                  <i class="icon-next"></i>
+                  <span class="hover-btn hover-bx"></span>
+                  <span class="hover-btn hover-bx2"></span>
+                  <span class="hover-btn hover-bx3"></span>
+                  <span class="hover-btn hover-bx4"></span>
+                </button>
+              </div>
             </div>
-        </form>
+          </form>
+<style>
+    .contact-form {
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 auto;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
+}
+
+.contact-form .form-label {
+  color: #222;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contact-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.25s ease;
+  box-shadow: none;
+}
+
+.contact-form .form-control:focus {
+  border-color: #ff5e14;
+  box-shadow: 0 0 0 0.25rem rgba(255, 94, 20, 0.15);
+}
+
+
+.thm-btn:hover {
+  background: #e94e0e;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.thm-btn i {
+  margin-left: 8px;
+}
+
+</style>          
         
     </div>
 

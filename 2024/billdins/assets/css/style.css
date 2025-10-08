@@ -34,7 +34,9 @@ Common
   --billdins-gray-bg-rgb: 247, 244, 237;
   --billdins-bdr-radius: 5px;
 }
-
+.contact-form .form-label{
+  font-family: var(--billdins-font-two);
+}
 .row {
   --bs-gutter-x: 30px;
 }
