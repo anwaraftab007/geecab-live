@@ -185,17 +185,17 @@ Why Choose One
     display: block;
 }
 
-.why-choose-one__content-single .icon-box span {
+.why-choose-one__content-single .icon-box i {
     position: relative;
     display: inline-block;
     color: var(--billdins-base);
-    font-size: 60px;
+    font-size: 40px;
     line-height: 60px;
     transition-delay: 0.1s;
     transition: all 500ms ease;
 }
 
-.why-choose-one__content-single:hover .icon-box span {
+.why-choose-one__content-single:hover .icon-box i {
     transform: rotateY(180deg);
     transition-delay: 0.1s;
 }
