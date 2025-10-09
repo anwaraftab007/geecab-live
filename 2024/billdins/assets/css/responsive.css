@@ -120,8 +120,9 @@
     .services-two__tab-box .tab-buttons {
         display: flex;
         margin-right: 0px;
+        margin-left: 0px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
     }
 
     .services-two__tab-box .tab-buttons .tab-btn {
@@ -154,10 +155,10 @@
         margin-left: 15px;
     }
 
-    .services-two__single-tab-inner .content-box {
+    /* .services-two__single-tab-inner .content-box {
         top: 83px;
         right: -83px;
-    }
+    } */
 
     .team-two__single-img {
         width: 200px;
@@ -212,6 +213,14 @@
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1319px) {
+    .services-two__tab-box .tab-buttons {
+        display: flex;
+        margin-right: 0px;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
     .pricing-one__single .table-header h2 {
         font-size: 40px;
         line-height: 50px;
@@ -506,14 +515,14 @@ Medium screen
         margin-top: 60px;
     }
 
-    .services-two__single-tab-inner .content-box {
+    /* .services-two__single-tab-inner .content-box {
         position: relative;
         top: 0px;
         right: 0px;
         transform: rotate(0deg);
         justify-content: space-between;
         margin-top: 20px;
-    }
+    } */
 
     .services-two__single-tab-inner {
         padding-right: 20px;
@@ -555,8 +564,9 @@ Medium screen
     .services-two__tab-box .tab-buttons {
         display: flex;
         margin-right: 0px;
+        margin-left: 0px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
     }
 
     .services-two__tab-box .tab-buttons .tab-btn {
@@ -1062,8 +1072,9 @@ Tablet Layout: 768px
     .services-two__tab-box .tab-buttons {
         display: flex;
         margin-right: 0px;
+        margin-left: 0px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
     }
 
     .services-two__tab-box .tab-buttons .tab-btn {
@@ -3555,3 +3566,24 @@ Main Menu All Responsice Css
 The End 
 =============================================
 ***/
+
+
+@media (min-width: 991px){
+    .services-two__tab-box .tab-buttons {
+        display: flex;
+        margin-right: 0px;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+}
+
+.services-two__single-tab-inner .content-box {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    transform: rotate(0deg);
+    justify-content: space-between;
+    margin-top: 20px;
+}
