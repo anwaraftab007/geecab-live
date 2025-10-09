@@ -518,7 +518,7 @@ Main Slider Two
     transition-delay: 1500ms;
 }
 
-.main-slider-two__bg::before {
+/* .main-slider-two__bg::before {
     position: absolute;
     top: 0;
     left: 335px;
@@ -534,7 +534,7 @@ Main Slider Two
     transition: all 1200ms ease;
     content: "";
     z-index: 1;
-}
+} */
 
 .main-slider-two .active .main-slider-two__bg::before {
     opacity: 1;
