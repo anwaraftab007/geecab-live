@@ -3587,3 +3587,10 @@ The End
     justify-content: space-between;
     margin-top: 20px;
 }
+
+@media (min-width: 768px){
+    .services ul.shadow-box{
+        display: none !important;
+    }
+    
+}
