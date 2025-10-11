@@ -1093,10 +1093,35 @@ largeState.addEventListener('mouseleave', () => {
 
                     <!--Start Sidebar-->
                     <div class="col-xl-4">
-                        <div class="sidebar">
+                         <div class="sidebar">
 
-                            
-                            <div class="sidebar__single sidebar__emergency-services wow fadeInUp animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                           <!--Start Sidebar Single-->
+                            <div class="sidebar__single sidebar__services wow fadeInUp animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp; margin-bottom: 16px;">
+                                <div class="title-box">
+                                    <h2>Our Product Range</h2>
+                                </div>
+
+                                <ul class="sidebar__services-list">
+                                    <!-- Product -->
+                                    <li><a href="/wires-cables/">Wires & Cables <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/gang-box/">Gang Box <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/electric-meter/">Electric Meter <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/pvc-conduit-pipe/">PVC Conduit Pipe <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/corrugated-flexible-pipe/">Corrugated Flexible Pipe <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/pvc-cassing/">PVC Casing <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/extension-cord/">Extension Cord <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/mcb-distribution-board/">MCB Distribution Board <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/mcb-switch/">MCB Switchgear <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/gi-box/">GI Box <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/wall-light/">Wall Light <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/pvc-electric-tape/">PVC Electric Tape <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/heater-coil/">Heater Coil <span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="/cable-management-accessories/">Cable Management Accessories<span class="icon-right-arrow"></span></a></li>
+                                  </ul>
+                                
+                            </div>
+
+                            <div class="sidebar__single sidebar__emergency-services wow fadeInUp animated animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                                 <div class="sidebar__emergency-services-inner text-center">
                                     <div class="title">
                                          <h2>Need Reliable Electrical Solutions?</h2>
@@ -1118,7 +1143,7 @@ largeState.addEventListener('mouseleave', () => {
                                     </div>
 
                                     <div class="btn-box">
-                                        <a class="thm-btn" href="contact.html">Contact Us
+                                        <a class="thm-btn" href="/contact.html">Contact Us
                                             <i class="icon-next"></i>
                                             <span class="hover-btn hover-bx"></span>
                                             <span class="hover-btn hover-bx2"></span>
@@ -1128,7 +1153,41 @@ largeState.addEventListener('mouseleave', () => {
                                     </div>
                                 </div>
                             </div>
-                           
+
+                            
+                            <!--End Sidebar Single-->
+
+                            <div class="sidebar__single sidebar__recent-post wow fadeInUp animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <div class="title-box">
+                                    <h2>Recent Post</h2>
+                                </div>
+
+                                <ul class="sidebar__recent-post-list" id="recent-posts">
+                                    <!-- Items will load here -->
+                                </ul>
+                                <script>
+                                    fetch("../blog.json")
+                                      .then(response => response.json())
+                                      .then(posts => {
+                                        const list = document.getElementById("recent-posts");
+                                
+                                        posts.forEach(post => {
+                                          const li = document.createElement("li");
+                                          li.innerHTML = `
+                                            <div class="img-box">
+                                              <img src="/2024/billdins/assets/images/blog/recent-post-img1.jpg" alt="${post.title}">
+                                            </div>
+                                            <div class="text-box">
+                                              <p><span class="icon-calendar"></span> ${post.date}</p>
+                                              <h3><a href="${post.url}">${post.title}</a></h3>
+                                            </div>
+                                          `;
+                                          list.appendChild(li);
+                                        });
+                                      })
+                                      .catch(error => console.error("Error loading blog.json:", error));
+                                  </script>
+                            </div>
 
                             
                         </div>
