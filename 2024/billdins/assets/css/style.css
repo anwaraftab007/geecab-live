@@ -1498,6 +1498,7 @@ Main Header One Css
   position: relative;
   display: flex;
   align-items: center;
+  padding-right: 0px !important;
 }
 
 .header-style1__contact li .icon i {
@@ -1533,7 +1534,7 @@ Main Header One Css
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  display: none !important;
+  /* display: none !important; */
 }
 
 .main-header__language-switcher {
