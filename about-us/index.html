@@ -760,6 +760,193 @@ largeState.addEventListener('mouseleave', () => {
               </div>
             </div>
           </div>
+
+          <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+        
+            .marq-text {
+                font-family: "Poppins", sans-serif;
+            }
+        
+            .marq-container {
+                background: white;
+                padding: 20px 0;
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+            }
+        
+            .marq-track {
+                display: inline-flex;
+                animation: marq-scroll 30s linear infinite;
+                width: fit-content;
+            }
+        
+            .marq-content {
+                display: inline-flex;
+            }
+        
+            .marq-item {
+                display: inline-flex;
+                align-items: center;
+                font-size: 48px;
+                font-weight: bold;
+                color: #1a1a1a;
+                padding: 0 30px;
+            }
+        
+            .marq-icon {
+                width: 70px;
+                height: 70px;
+                margin: 0 20px;
+                position: relative;
+                display: inline-block;
+            }
+        
+            .marq-circle {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        
+            .marq-circle-1 {
+                background: #4a90e2;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 3;
+            }
+        
+            .marq-circle-2 {
+                background: #f9d71c;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+            }
+        
+            .marq-circle-3 {
+                background: #e91e63;
+                bottom: 0;
+                right: 0;
+                z-index: 1;
+            }
+        
+            @keyframes marq-scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        
+            .marq-track:hover {
+                animation-play-state: paused;
+            }
+        
+            @media (max-width: 768px) {
+                .marq-item {
+                    font-size: 32px;
+                }
+                .marq-icon {
+                    width: 50px;
+                    height: 50px;
+                }
+                .marq-circle {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        </style>
+        
+        <div class="my-8 my-md-16">
+          <div class="marq-container">
+            <div class="marq-track">
+                <div class="marq-content">
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Packageing Web Design</div>
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Sitcker Print</div>
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Packageing Web Design</div>
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Sitcker Print</div>
+        
+                </div>
+        
+                <!-- Duplicate for seamless loop -->
+                <div class="marq-content">
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Packageing Web Design</div>
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Sitcker Print</div>
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Packageing Web Design</div>
+        
+                    <div class="marq-item">
+                        <span class="marq-icon">
+                            <span class="marq-circle marq-circle-1"></span>
+                            <span class="marq-circle marq-circle-2"></span>
+                            <span class="marq-circle marq-circle-3"></span>
+                        </span>
+                    </div>
+                    <div class="marq-item marq-text">Sitcker Print</div>
+        
+                </div>
+            </div>
+        </div>
+        
+        </div>
         
           <!-- GEECAB acronym (images remain unchanged) -->
           <div class="w-full text-center animation-style2 !pb-0 mx-auto py-2 lg:py-8 mt-4 md:mt-8">
@@ -827,7 +1014,9 @@ largeState.addEventListener('mouseleave', () => {
             </div>
           </div>
         </section>
-        
+
+         
+      
         <!-- Why Choose Us -->
         <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8"  style="text-align: justify !important;">
           <div class="sec-title center text-center tg-heading-subheading animation-style2">
