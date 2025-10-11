@@ -322,6 +322,13 @@
     font-size: 15px;
     line-height: 15px;
 }
+.footer-widget__contact-list li .icon-box i {
+    position: relative;
+    display: inline-block;
+    color: var(--billdins-base);
+    font-size: 15px;
+    line-height: 15px;
+}
 
 .footer-widget__contact-list li .text-box {
     position: relative;
