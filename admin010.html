@@ -549,7 +549,7 @@ body {
             if (response.ok) {
                 alert("Blog created successfully!");
                 resultDiv.innerHTML = '<span class="text-base font-bold text-green-900">Blog Created Successfully.</span>';
-                window.location.href = "/blogs.html";
+                window.location.href = "/blogs/";
             } else {
                 const errorData = await response.json();
                 console.error("Server error:", errorData);
