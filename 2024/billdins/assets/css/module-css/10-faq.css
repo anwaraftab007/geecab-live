@@ -112,6 +112,7 @@ Faq One
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
+    width: 95%;
     /* text-transform: capitalize; */
     margin: 0;
     -webkit-transition: all 500ms ease;
@@ -129,7 +130,7 @@ Faq One
     line-height: 16px;
     font-weight: 700;
     top: 50%;
-    right: 0px;
+    right: -10%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -webkit-transition: all 500ms ease;
@@ -177,7 +178,7 @@ Faq One
     content: "\e904";
     color: var(--billdins-base);
     transform: rotate(180deg);
-    top: 5px;
+    top: 50%;
 }
 
 .faq-one-accrodion .accrodion-content {
@@ -293,4 +294,16 @@ Faq One Faq
 .faq-one--faq .faq-one-accrodion .accrodion {
     -webkit-box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.08);
     box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 475px) {
+    .faq-one-accrodion .accrodion-title h4{
+        width: 100%;
+    }
+    .faq-one-accrodion .accrodion-title h4:before{
+        right: 0px;
+    }
+    .faq-one-accrodion .accrodion-title h4::before{
+        right: 0px;
+    }
 }
