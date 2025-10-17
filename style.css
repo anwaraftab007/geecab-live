@@ -206,3 +206,8 @@ ul.shadow-box .dropdown-submenu > a {
   position: sticky;
   top: 100px;
 }
+@media (min-width: 1535px){
+  .services-two__tab-box .tab-buttons{
+    margin-left: 1%;
+  }
+}
