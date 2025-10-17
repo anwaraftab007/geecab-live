@@ -1186,9 +1186,9 @@
                 y: "0",
                 rotateX: "0",
                 opacity: 1,
-                duration: 1,
+                duration: 0.714,    // 1.4x faster
                 ease: Back.easeOut,
-                stagger: 0.02,
+                stagger: 0.0143,    // 1.4x faster between chars
             });
         });
     }

@@ -1473,10 +1473,12 @@ Mobile Layout: 320px
     }
 
     .sec-title__title {
-        font-size: 30px;
+        font-size: 25px;
         line-height: 42px;
     }
-
+    .our-presence-tagline{
+        font-size: 25px;
+    }
 
     .about-one .shape2 {
         display: none;

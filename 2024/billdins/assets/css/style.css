@@ -469,7 +469,7 @@ Sec Title Css
 }
 
 .our-presence-tagline {
-  font-size: 38px !important;
+  font-size: 38px;
   line-height: 58px;
   font-weight: 700;
   text-transform: none;
