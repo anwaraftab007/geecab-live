@@ -190,10 +190,12 @@
                 .nav-link.active {
                     color: #ff6b35;
                 }
-        
+                .nav-container{
+                    position: relative;
+                }
                 /* Dropdown styles */
                 .dropdown {
-                    position: relative;
+                    /* position: relative; */
                     display: inline-block;
                 }
         
@@ -214,30 +216,55 @@
                 }
         
                 .dropdown-menu {
-                    position: absolute;
-                    top: 80%;
-                    left: 0;
-                    right: 0;
-                    background: white;
-                    width: 1100px;
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-                    transition: all 0.3s ease;
-                    opacity: 0;
-                    visibility: hidden;
-                    border-radius: 8px;
-                    margin-top: 10px;
-                    z-index: 9999;
-                    padding: 25px;
-                    border: 1px solid #f0f0f0;
-                }
-        
-                .dropdown:hover .dropdown-menu {
-                    opacity: 1 !important;
-                    visibility: visible !important;
-                    transform: translateX(-30%) translateY(0) !important;
-                    display: block !important;
-                }
-        
+    position: absolute;
+    top: 80%; /* Positions it right below the nav bar */
+    left: 50%; /* Aligns the left edge of the menu to the center of the container */
+    background: white;
+    width: 1100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 8px;
+    margin-top: 10px; /* Adds a small gap */
+    z-index: 9999;
+    padding: 25px;
+    border: 1px solid #f0f0f0;
+    /* The key change for centering: */
+    transform: translateX(-45.3%) translateY(10px); /* Shifts it left by half its width for true centering and slightly down for the transition */
+}
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    /* The final centered position for the transition */
+    transform: translateX(-45.3%) translateY(0);
+    display: block;
+}
+@media(min-width: 1280px){
+    .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    /* The final centered position for the transition */
+    transform: translateX(-50%) translateY(0);
+    display: block;
+}
+}
+@media(min-width: 1332px){
+    .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    /* The final centered position for the transition */
+    transform: translateX(-35%) translateY(0);
+    display: block;
+}
+}
+        @media (min-width: 1500px) {
+           
+.dropdown-menu{
+    left: 0%;
+}
+   
+        }
                 .dropdown-grid {
                     display: grid;
                     grid-template-columns: repeat(7, 1fr);
@@ -420,8 +447,6 @@
     background-color: #f7f4ed;
 }
             </style>
-        </head>
-        <body>
             <!-- Top Bar -->
             <div class="main-header-one__top">
                 <div class="container">
@@ -540,49 +565,7 @@
                                                 <div class="dropdown-item-title">Gang Boxes</div>
                                             </a>
         
-                                            <!-- Second Row (7 items) -->
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-lightbulb"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">Wall Light</div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-toggle-on"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">MCB Switch</div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-cube"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">GI Box</div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-grip-lines"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">Corrugated Flexible Pipes</div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-fire"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">Heater Coil</div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-tools"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">Cable Management Accessories</div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-image">
-                                                    <i class="fas fa-circle"></i>
-                                                </div>
-                                                <div class="dropdown-item-title">PVC Casing</div>
-                                            </a>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -1232,20 +1215,21 @@
                                                 
                                                 <!-- Mobile Navigation (visible only on small screens) -->
                                                 <ul class="shadow-box mobile-nav">
-<li><a href="/product/wires-and-cables.html">Wires & Cables</a></li>
-<li><a href="/product-gang-box.html">Gang Box</a></li>
-<li><a href="/product-meters.html">Electric Meter</a></li>
-<li><a href="/product-pvc-pipe.html">PVC Conduit Pipe</a></li>
-<li><a href="/product-corrugated-flexible-pipe.html">Corrugated Flexible Pipe</a></li>
-<li><a href="/product-pvc-cassing.html">PVC Casing</a></li>
-<li><a href="/product-extension-cord.html">Extension Cord</a></li>
-<li><a href="/product-mcb.html">MCB Distribution Board</a></li>
-<li><a href="/product-mcb-switch.html">MCB Switch</a></li>
-<li><a href="/product-gi-box.html">GI Box</a></li>
-<li><a href="/product-wall-light.html">Wall Light</a></li>
-<li><a href="/product-pvc-tape.html">PVC Electric Tape</a></li>
-<li><a href="/product-heater-coil.html">Heater Coil</a></li>
-<li><a href="/product-cable-management-accessories.html">Cable Management Accessories</a></li>
+<li><a href="/wires-and-cables/">Wires & Cables</a></li>
+<li><a href="/gang-box/">Gang Box</a></li>
+<li><a href="/electric-meters/">Electric Meter</a></li>
+<li><a href="/pvc-conduit-pipes/">PVC Conduit Pipe</a></li>
+<li><a href="/corrugated-flexible-pipes/">Corrugated Flexible Pipe</a></li>
+<li><a href="/pvc-trunking-ducting-profiles/">PVC Casing</a></li>
+<li><a href="/extension-cords/">Extension Cord</a></li>
+<li><a href="/mcb-distribution-boards/">MCB Distribution Board</a></li>
+<li><a href="/mcb-switch/">MCB Switchgear</a></li>
+<li><a href="/gi-box/">GI Box</a></li>
+<li><a href="/wall-lights-led-foot-lights/">Wall Light</a></li>
+<li><a href="/pvc-electrical-tape/">PVC Electric Tape</a></li>
+<li><a href="/heater-coil/">Heater Coil</a></li>
+<li><a href="/cable-fastening-accessories/">Cable Management Accessories</a></li>
+
                                                 </ul>
                                             
                                                
