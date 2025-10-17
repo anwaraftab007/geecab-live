@@ -358,6 +358,9 @@ Sec Title Css
   padding-bottom: 47px;
   z-index: 1;
 }
+.our-presence-box{
+  padding-bottom: 27px;
+}
 
 .sec-title__tagline {
   position: relative;
@@ -465,6 +468,13 @@ Sec Title Css
   font-family: var(--billdins-font-two);
 }
 
+.our-presence-tagline {
+  font-size: 38px !important;
+  line-height: 58px;
+  font-weight: 700;
+  text-transform: none;
+  font-family: var(--billdins-font-two);
+}
 
 /***
 =============================================
