@@ -211,3 +211,6 @@ ul.shadow-box .dropdown-submenu > a {
     margin-left: 1%;
   }
 }
+.large-menu{
+  display: none !important;
+}
