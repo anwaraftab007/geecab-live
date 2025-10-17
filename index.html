@@ -896,18 +896,52 @@ largeState.addEventListener('mouseleave', () => {
                                     <p>For over 25 years, <b>GeeCab</b> has illuminated homes and powered industries with reliable electrical products built on precision, safety and trust. Established in 1999, <b>Gananayak Cable Industries</b> has grown from crafting quality <b>wires and cables</b> to delivering a comprehensive range of electrical products, including <b>PVC Pipes, Electric Meters</b> and <b>MCB Boards</b>, each designed for superior performance, protection and long-term value.</p>
                                 </div>
                                 <div class="about-one__content-text2">
-                                    <ul class="about-one__content-list">
+                                    <ul class="custom-bullet-list">
                                         <li>
+                                            <span class="bullet-circle"></span>
                                             <p>ISO-certified manufacturing ensuring superior quality and sustainability</p>
                                         </li>
                                         <li>
+                                            <span class="bullet-circle"></span>
                                             <p>Complete range of wiring, lighting and protection solutions under one roof</p>
                                         </li>
                                         <li>
+                                            <span class="bullet-circle"></span>
                                             <p>Trusted by professionals nationwide for safety, innovation and reliability</p>
                                         </li>
                                     </ul>
                                 </div>
+                                
+<style>
+    ul.custom-bullet-list {
+    list-style: none;      /* remove default bullets */
+    padding-left: 0;
+    margin: 0;
+}
+
+ul.custom-bullet-list li {
+    display: flex;
+    align-items: flex-start;   /* align span with top of text */
+    margin-bottom: 12px;
+    position: relative;
+}
+
+ul.custom-bullet-list li .bullet-circle {
+    width: 7px;               /* circle width */
+    height: 7px;              /* circle height */
+    background-color: #4D5765;    /* circle color */
+    border-radius: 50%;        /* makes it circular */
+    flex-shrink: 0;            /* don’t shrink */
+    margin-right: 10px;        /* space between circle and text */
+    margin-top: 7px;           /* align with first line of text */
+}
+
+ul.custom-bullet-list li p {
+    margin: 0;
+    text-align: justify;
+}
+
+</style>                                
                                 <div class="about-one__content-btn text-left ml-0">
                                     <a class="thm-btn" href="/about-us/">Read more
                                         <i class="icon-next"></i>
