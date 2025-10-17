@@ -219,6 +219,7 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 47px;
+    gap: 22px;
 }
 
 .services-two__top .sec-title {
@@ -228,7 +229,7 @@
 .services-two__top .text-box {
     position: relative;
     display: block;
-    max-width: 400px;
+    max-width: 650px;
     width: 100%;
 }
 
@@ -287,7 +288,9 @@
     border-radius: 5px;
     z-index: -1;
 }
-
+.services-two__tab-box .tab-buttons .tab-btn:hover .icon-box i {
+    color: white;
+}
 .services-two__tab-box .tab-buttons .active-btn.tab-btn:before {
     transform: scaleY(1.0);
 }
@@ -307,8 +310,20 @@
     transition: all 200ms linear;
     transition-delay: 0.1s;
 }
+.services-two__tab-box .tab-buttons .tab-btn .icon-box i::before {
+    position: relative;
+    display: inline-block;
+    color: var(--billdins-base);
+    font-size: 50px;
+    line-height: 60px;
+    transition: all 200ms linear;
+    transition-delay: 0.1s;
+}
 
 .services-two__tab-box .tab-buttons .active-btn.tab-btn .icon-box span::before {
+    color: var(--billdins-white);
+}
+.services-two__tab-box .tab-buttons .active-btn.tab-btn .icon-box i::before {
     color: var(--billdins-white);
 }
 
@@ -599,7 +614,11 @@ Services Details
         margin-bottom: 0px !important;
     } */
 }
-
+@media (max-width: 987px){
+    .services-two__tab-box .tab-buttons .tab-btn {
+        margin-right: 0px;
+    }
+}
 .services-details__content-img2-single {
     position: relative;
     display: block;
